@@ -1,7 +1,7 @@
 import json
 import numpy as np
 
-matrix = np.load('/home/whytech/lab_2/tasks/first_task.npy')
+matrix = np.load('./tasks/first_task.npy')
 
 size = matrix.size
 
@@ -43,7 +43,7 @@ norm_matrix = matrix / matrix_props['sum']
 for key in matrix_props.keys():
     matrix_props[key] = float(matrix_props[key])
 
-with open('/home/whytech/lab_2/results/task_1_solve.json', 'w', encoding='utf-8') as file:
+with open('./results/task_1_solve.json', 'w', encoding='utf-8') as file:
     json.dump(matrix_props, file, indent=1)
 
-np.save('/home/whytech/lab_2/results/task_1_solve.npy', norm_matrix)
+np.save('./results/task_1_solve.npy', norm_matrix)
