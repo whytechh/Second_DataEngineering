@@ -2,7 +2,7 @@ import os
 import json
 import msgpack
 
-with open('/home/whytech/lab_2/tasks/third_task.json', 'r', encoding='utf-8') as file:
+with open('./tasks/third_task.json', 'r', encoding='utf-8') as file:
     items = json.load(file)
 
 items_dict = {}
@@ -38,14 +38,14 @@ for name in items_dict:
 
 to_save = list(items_dict.values())
 
-with open('/home/whytech/lab_2/results/task_3_solve.json', 'w', encoding='utf-8') as file:
+with open('./results/task_3_solve.json', 'w', encoding='utf-8') as file:
     json.dump(to_save, file, ensure_ascii=False, indent=1)
 
-with open('/home/whytech/lab_2/results/task_3_solve.msgpack', 'wb') as file:
+with open('./results/task_3_solve.msgpack', 'wb') as file:
     msgpack.dump(to_save, file)
 
-json_size = os.path.getsize('/home/whytech/lab_2/results/task_3_solve.json')
-msgpack_size = os.path.getsize('/home/whytech/lab_2/results/task_3_solve.msgpack')
+json_size = os.path.getsize('./results/task_3_solve.json')
+msgpack_size = os.path.getsize('./results/task_3_solve.msgpack')
 
 print(f'json = {json_size}')
 print(f'msgpack = {msgpack_size}')
